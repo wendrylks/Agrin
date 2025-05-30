@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
+
+:root {
+    --laranja-claro: #FF862A;
+    --alto-contraste-fundo: #000000;
+    --alto-contraste-texto: #0c3208;
+    --alto-contraste-link: #8403b3;
+}
+
+body {
+    font-size: 1rem;
+    font-family: 'Montserrat';
+}
+
+header {
+  position: relative;
+  width: 100%;
+  height: 225px;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(1, 135, 48, 0.712);
+}
+
+/* Imagem do GIF como fundo normal */
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* top/right/bottom/left = 0 */
+  background-image: url(img/campo\ 2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  border-radius: 50px;
+}
+
+/* Camada com gradiente animado por cima */
+header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #35bec0, #270f68, #03602b);
+  background-size: 300% 300%;
+  opacity: 0.25; /* Transparência para não esconder a imagem */
+  border-radius: 25px;
+  animation: gradientMove 10s ease infinite;
+  z-index: 2;
+}
+
+/* Mantém o conteúdo dentro do header acima das camadas */
+header > * {
+  position: relative;
+  z-index: 3;
+}
+
+/* Animação do gradiente deslizando */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Animação de sombra pulsante */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(1, 220, 12, 0.6), 0 0 40px rgba(76, 190, 10, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(3, 127, 152, 0.9), 0 0 80px rgb(5, 188, 102);
+  }
+}
+
+/* Aplica pulseGlow na sombra do header */
+header {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+section {
+    padding-bottom: 5rem;
+}
+
+
+.nav-link {
+    color: #14b817;
+    font-weight: 600;
+}
+
+.inicio-fundo {
+    /* aula 3 */
+    background-image: url('img/200.webp');
+    /* Substitua pelo caminho da sua imagem */
+    background-size: cover;
+    background-position: center;
+    border-radius: 80px;
+    max-width: none ;
+    height: 606px;
+    padding: 100px;
+   margin-left: -5.3vw;
+    width: 92vw
+}
+
+/* posicionamento para a imagem à direita */
+.img-inicio {
+    position: absolute;
+    right: 0;
+    top: 18rem;
+    width: 45rem;
+    height: auto;
+}
+
+
+.esquerda-conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+
+.botao-inicio {
+    background-color: var(--verde-escuro);
+    border-radius: 30px;
+    border: none;
+    width: 14em;
+    height: 3em;
+    align-content: center;
+
+}
+
+.display-4 {
+    text-shadow: -5px 5px var(--verde-claro);
+}
+
+
+#tropicalia {
+  background-color: #25db44;         /* Substitui a imagem por uma cor */
+  /* background: linear-gradient(to right, #ff7e5f, #feb47b);  // Gradiente se quiser */
+  color: #133702;                       /* Cor do texto ajustada para contraste */
+  border-radius: 80px;
+  max-width: none;
+  height: 606px;
+  padding: 100px;
+  margin-left: -5.3vw;
+  width: 92vw;
+}
+    
+
+
+#tropicalia .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    /* Garante que o conteúdo fica acima das imagens do background */
+}
+
+
+h2 {
+    font-family: 'Lemon', serif;
+    font-size: 2.5em;
+    font-style: normal;
+    color: var(--azul-claro);
+}
+
+#galeria {
+    background-color: #053702;
+
+}
+
+.fundo-galeria {
+    background: url('img/flor-bottom-direita.png') bottom right no-repeat;
+    background-size: 180px 180px;
+}
+
+#contato {
+    background-image: url('img/4965007.jpg');
+    background-size: cover;
+    padding: 4rem 0;
+    /* Espaçamento interno para a seção de contato */
+
+}
+
+.formulario {
+    background-color: #066813;
+    padding: 2rem;
+    /* Espaçamento interno dentro do formulário */
+    border-radius: 10px;
+    /* Borda arredondada para o formulário */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Sombra suave para destacar o formulário */
+    font-weight: bold;
+}
+
+.formulario button {
+    background-color: #06471c;
+    border: none;
+    font-weight: bold;
+}
+
+.form-control {
+    background-color: #F1EDEF;
+}
+.menu-acessibilidade{
+    position: fixed;
+    top:2rem;
+    right:20px;
+    z-index: 1000;
+}
+
+.rotacao-botao{
+    transform: rotate(-90deg);
+    transform-origin: right center;
+}
+
+.opcoes-acessibilidade{
+    margin-top:10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.opcoes-acessibilidade button{
+    margin-bottom: 5px;
+}
+.apresenta-lista{
+    display: none;
+}
+
+.alto-contraste{
+    background-color: var(--alto-contraste-fundo);
+    color: var(--alto-contraste-texto);
+}
+
+.alto-contraste header,
+.alto-contraste footer,
+.alto-contraste .formulario{
+    background-color: var(--alto-contraste-fundo);
+    color: var(--alto-contraste-texto);
+}
+
+.alto-contraste .nav-link{
+    color: var(--alto-contraste-link);
+}
+
+.alto-contraste .botao-inicio,
+.alto-contraste .formulario button,
+.alto-contraste .btn-primary{
+    background-color: var(--alto-contraste-link);
+    color: var(--alto-contraste-fundo)
+}
+
+.alto-contraste #tropicalia {
+    background: none;
+}
+
+.alto-contraste #galeria {
+    background-color: var(--alto-contraste-fundo);
+}
+.alto-contraste .fundo-galeria {
+    background: none;
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #111; /* Fundo escuro para destacar */
+  box-sizing: border-box;
+  
+  border: 20px solid;
+  border-radius: 50px;
+  animation: rainbowBorder 10s linear infinite, neonPulse 3s ease-in-out infinite, borderDance 6s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
+  transition: all 1s ease-in-out;
+}
+
+/* Gradiente arco-íris em loop */
+@keyframes rainbowBorder {
+  0% {
+    border-color: red;
+  }
+  20% {
+    border-color: orange;
+  }
+  40% {
+    border-color: yellow;
+  }
+  60% {
+    border-color: green;
+  }
+  80% {
+    border-color: blue;
+  }
+  100% {
+    border-color: violet;
+  }
+}
+
+/* Pulso neon com glow explosivo */
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 20px #0347b5,
+      0 0 60px #3a015e,
+      0 0 100px #4db806;
+  }
+  50% {
+    box-shadow:
+      0 0 40px #00ffff,
+      0 0 100px #00ffff,
+      0 0 160px #00ffff;
+  }
+}
